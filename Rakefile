@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BarcodeScanner::Application.load_tasks
+Uif2012::Application.load_tasks
