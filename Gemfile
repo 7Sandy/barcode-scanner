@@ -21,6 +21,7 @@ group :development do
 	gem 'thin'
 	gem 'quiet_assets'
 	gem 'sqlite3'
+  # gem 'mysql', '2.8.1'
 end
 
 group :assets do
