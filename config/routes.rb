@@ -22,4 +22,12 @@ Uif2012::Application.routes.draw do
 
   resources :registrations
 
+
+
+  # Semi-static page routes
+  match 'home' => 'home#home', :as => :home
+  
+  root :to => 'home#home'
+  
+  
 end
