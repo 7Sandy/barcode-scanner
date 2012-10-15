@@ -1,21 +1,24 @@
 class HomeController < ApplicationController
-  def home
-    @b = 'abc'
-    @barcode = params[:barcode_number]
-    puts "------init------"
-    puts @barcode
-     # respond_to do |format|
-     #      format.html { render json: @b, notice: 'Barcode was successfully created.' }
-     #  end
-  end
+    def home
+        @barcode = params[:barcode]
+        puts "------init------"
+        puts @barcode.nil? 
+        
+        if (!@barcode.nil?)
+            puts " ok here we are"
+            flash[:notice] = "Barcode was successfully scanned"
+        else
+            flash[:error] = "There was something wrong with the scanning!" 
+        end
+    end
 
-  def about
-  end
+    def about
+    end
 
-  def privacy
-  end
+    def privacy
+    end
 
-  def contact
-  end
+    def contact
+    end
 
 end
