@@ -1,0 +1,74 @@
+<h1> Barcode Scanning Page </h1>
+
+<head>
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+
+
+    <script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        $("#Input").focus(); 
+        count = 0; 
+        $("#Input").value = " "; 
+    }); 
+
+
+
+
+    function displayunicode()
+    {
+        var arr = new Array(); 
+        // var unicode=e.keyCode? e.keyCode : e.charCode
+        var unicode = document.getElementById("Input").value; 
+        var display = document.getElementById("add-here"); 
+        var val = ""; 
+
+        if (unicode.length === 12)
+        {
+            count++; 
+            unicode = document.getElementById("Input").value;
+            val = "<div class='ani'>" + "<span>"+count + "</span>" +":" + unicode + "</div>"; 
+            display.innerHTML += val;
+            
+            var url = '/home/home 
+            message='+encodeURIComponent(val); 
+            new Ajax.Request(url, 
+            { asynchronous:true, evalScripts:true, method:'get', 
+            onComplete: function(t) { 
+                alert("cest finis"); 
+                // do something 
+             } 
+            });
+                
+            document.getElementById("Input").value = ""; 
+        }
+
+    }
+    </script>
+</head>
+
+
+<body>
+    <!-- <h3> Barcode Test </h3> -->
+    <div id="content">
+
+
+
+    </div>
+    
+    <%= form_for(@student) do |f| %>
+    <%= f.label :barcode_number %><br />
+    <%= f.text_field :barcode_number, :id=>"Input"%>
+  
+    <h4 id = "bcode"> Barcodes: </h4>
+
+
+    <span id="add-here"> </span>
+
+    <% end %>
+
+</body>

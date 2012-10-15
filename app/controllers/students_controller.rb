@@ -23,6 +23,16 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   # GET /students/new.json
+  
+  def home
+    @student = Student.find(1)
+    # right now it's merely updating the barcode number
+     # respond_to do |format|
+     #      format.html { render json: @b, notice: 'Barcode was successfully created.' }
+     #  end
+  end
+  
+  
   def new
     @student = Student.new
 

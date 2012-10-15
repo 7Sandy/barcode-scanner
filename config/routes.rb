@@ -25,9 +25,10 @@ Uif2012::Application.routes.draw do
 
 
   # Semi-static page routes
-  match 'home' => 'home#home', :as => :home
+  match 'home' => 'students#home', :as => :home
+  #match 'home/jmsg/:msg', :controller => 'home', :action=>'jmsg', :via => :post
   
-  root :to => 'home#home'
+  root :to => 'students#home'
   
   
 end
