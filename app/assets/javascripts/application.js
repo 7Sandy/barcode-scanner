@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require flash_alert_behavior
 
 $(function() {
   flash_alert_behavior();

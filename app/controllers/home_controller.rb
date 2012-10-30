@@ -2,13 +2,14 @@ class HomeController < ApplicationController
     def home
         @barcode = params[:barcode]
         puts "------init------"
-        puts @barcode.nil? 
-        
+        @print = "your barcode is: #{@barcode}";  
+        puts @print
+
+
         if (!@barcode.nil?)
-            puts " ok here we are"
             flash[:notice] = "Barcode was successfully scanned"
         else
-            flash[:error] = "There was something wrong with the scanning!" 
+            flash[:notice] = "There was something wrong with the scanning!" 
         end
     end
 
